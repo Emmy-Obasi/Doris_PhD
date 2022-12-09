@@ -39,7 +39,8 @@ with dataset:
     st.header('Dataset')
     st.text('The dataset is customized and cannot be viewed publicly')
 
-    atm = pd.read_csv('atm.csv')
+    #atm = pd.read_csv('atm.csv')
+    atm = pd.read_csv(r'.\\atm3.csv')
     st.write(atm.head(5))
     scaler = MinMaxScaler()
 
