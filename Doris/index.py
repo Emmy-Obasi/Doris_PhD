@@ -124,7 +124,17 @@ if st.button('Simulate ATM Transaction'):
     scaler = MinMaxScaler()
     x = [{'time': time, 'ac': ac, 'd': dist, 'amount': amount}]
     x_df = pd.DataFrame.from_dict(x)
-    st.write(x_df)
+    #st.write(x_df)
+    
+    for v in x_df['time']:
+        st.write('Transaction time interval: ',v*100, ' minutes')
+
+    for v in x_df['d']:
+        st.write('Distance between terminals: ',v, ' meters')
+
+    for v in x_df['amount']:
+        st.write('Transaction Amount: =N=',v)
+    
     #x_df = scaler.fit_transform(x_df)
     x_df = scaler.fit_transform([[time, ac, dist, amount]])
     #st.write(x_df)
@@ -132,10 +142,10 @@ if st.button('Simulate ATM Transaction'):
     
     if prediction == 1:
         target = "Fraud"
-        msg = "Fraud is suspected in this transaction"
+        msg = "Prediction status:  Fraud is suspected in this transaction"
     else:
         target = "Normal"
-        msg = "This transaction is normal"
+        msg = "Prediction status:  This transaction is normal"
 
     #msg = "Transaction is " + target
     #st.write('Transaction is ', target)
