@@ -40,10 +40,10 @@ with dataset:
     st.text('The dataset is customized and cannot be viewed publicly')
 
     #atm = pd.read_csv('atm.csv')
-    #atm = pd.read_csv(r'./doris/atm.csv')
+    atm = pd.read_csv(r'/app/doris_phd/Doris/atm.csv')
     
-    path = 'atm.csv'
-    atm = pd.read_csv(path, encoding='ISO-8859-1')
+    #path = 'atm.csv'
+    #atm = pd.read_csv(path, encoding='ISO-8859-1')
     
     st.write(atm.head(5))
     scaler = MinMaxScaler()
