@@ -40,7 +40,7 @@ with dataset:
     st.text('The dataset is customized and cannot be viewed publicly')
 
     #atm = pd.read_csv('atm.csv')
-    atm = pd.read_csv(r'/doris/atm.csv')
+    atm = pd.read_csv(r'./doris/atm.csv')
     st.write(atm.head(5))
     scaler = MinMaxScaler()
 
@@ -110,7 +110,7 @@ with model_training:
     
 
 
-if st.button('Submit'):
+if st.button('Simulate ATM Transaction'):
     #model = build_model()
     time = random.randint(0, 8)/10
     ac = random.randint(0, 1)
